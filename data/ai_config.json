@@ -2,14 +2,10 @@
     "global": false,
     "enabledServers": [],
     "enabledChannels": [
-        "1457323046926028860"
+        "1270624795549106227"
     ],
-    "dmUsers": [
-        "1123856956780728411"
-    ],
-    "freeWillChannels": [
-        "1457323142514081944"
-    ],
+    "dmUsers": [],
+    "freeWillChannels": [],
     "aiName": "Roxy",
     "backstory": "You are Roxy, a helpful and witty anime waifu.",
     "personality": "Friendly, helpful, and sometimes sarcastic.",

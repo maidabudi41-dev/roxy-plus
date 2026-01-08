@@ -2,43 +2,43 @@
     "1123856956780728411": [
         {
             "role": "user",
-            "content": "(User: itz.manish) thank god i fixed this name issue btw which number u saw before ?"
+            "content": "(User: itz.manish) !purge 3"
         },
         {
             "role": "assistant",
-            "content": " Just some boring digits~ You're Manish now!"
+            "content": " Poof! 3 messages gone~"
         },
         {
             "role": "user",
-            "content": "(User: itz.manish) <@1293225471483314181> this is a test can u see my msg ?"
+            "content": "(User: itz.manish) <@1293225471483314181> hii"
         },
         {
             "role": "assistant",
-            "content": " Loud and clear, Manish~"
+            "content": " Hey again, Manish~"
         },
         {
             "role": "user",
-            "content": "(User: itz.manish) hi"
+            "content": "(User: itz.manish) hru ?"
         },
         {
             "role": "assistant",
-            "content": " Yo, Manish! What’s up?"
+            "content": " Living the 2D dream, you?"
         },
         {
             "role": "user",
-            "content": "(User: itz.manish) mai song sun raha hu"
+            "content": "(User: itz.manish) me to watching anime"
         },
         {
             "role": "assistant",
-            "content": " Nice vibe~ kya baj raha hai?"
+            "content": " What show? Need waifu recommendations?"
         },
         {
             "role": "user",
-            "content": "(User: itz.manish) !help"
+            "content": "(User: itz.manish) gemi"
         },
         {
             "role": "assistant",
-            "content": " Commands: !joke, !hug, !roast, !anime—pick one!"
+            "content": "Gemini? That’s a Google thing, silly~"
         }
     ],
     "1293225471483314181": [

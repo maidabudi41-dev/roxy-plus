@@ -12,9 +12,14 @@ module.exports = {
             // Auto-assign Music category for known commands if property missing
             if (['play', 'stop', 'skip', 'queue', 'join', 'left'].includes(cmd.name)) cat = 'Music';
 
+            // Ensure Purge/DM are Utility (though set in file)
+            if (['purge', 'dm'].includes(cmd.name)) cat = 'Utility';
+
             if (!categories[cat]) categories[cat] = [];
             categories[cat].push(cmd);
         });
+
+        let replyMsg = null;
 
         // 1. Show Specific Category
         if (args[0]) {
@@ -26,22 +31,29 @@ module.exports = {
                     msg += `  • ${cmd.name.padEnd(10)} - ${cmd.description || 'No description'}\n`;
                 });
                 msg += '\n╰──────────────────────────────────╯\n```';
-                return message.reply(msg);
+                replyMsg = await message.reply(msg);
             } else {
-                return message.reply('Category not found. Type !help for list.');
+                replyMsg = await message.reply('Category not found. Type !help for list.');
             }
+        } else {
+            // 2. Show All Categories (Main Menu)
+            let helpMessage = '```\n';
+            helpMessage += '╭─[ ROXY+ HELP ]─╮\n\n';
+            helpMessage += '  Available Categories:\n\n';
+
+            Object.keys(categories).forEach(cat => {
+                helpMessage += `  📂 ${cat} (Type !help ${cat.toLowerCase()})\n`;
+            });
+
+            helpMessage += '\n╰──────────────────────────────────╯\n```';
+            replyMsg = await message.reply(helpMessage);
         }
 
-        // 2. Show All Categories (Main Menu)
-        let helpMessage = '```\n';
-        helpMessage += '╭─[ ROXY+ HELP ]─╮\n\n';
-        helpMessage += '  Available Categories:\n\n';
-
-        Object.keys(categories).forEach(cat => {
-            helpMessage += `  📂 ${cat} (Type !help ${cat.toLowerCase()})\n`;
-        });
-
-        helpMessage += '\n╰──────────────────────────────────╯\n```';
-        message.reply(helpMessage);
+        // Auto Delete after 15 seconds
+        if (replyMsg) {
+            setTimeout(() => {
+                replyMsg.delete().catch(() => { });
+            }, 15000);
+        }
     }
 };
